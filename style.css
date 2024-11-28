@@ -1,0 +1,74 @@
+/* Ensure the gallery collection spans full width without overflow */
+.notion-collection-gallery,
+.notion-collection-gallery.small,
+.notion-collection-gallery.medium,
+.notion-collection-gallery.large {
+  display: block; /* Ensure single-column layout */
+  width: 100%; /* Match the width of the parent container */
+  max-width: 100%; /* Prevent overflow */
+  margin: 0 auto; /* Center-align the gallery */
+  padding: 0; /* Remove any default padding */
+  overflow: hidden; /* Prevent accidental spillage */
+}
+
+/* Force each gallery card to span the full width */
+.notion-collection-card.gallery {
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Align items (image and text) vertically */
+  gap: 16px; /* Space between image and text */
+  margin: 16px auto; /* Add vertical spacing between cards */
+  padding: 16px; /* Add padding inside cards */
+  background-color: #0e3333; /* Card background color */
+  border-radius: 8px; /* Rounded corners for design */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effect */
+}
+
+/* Style the image in the card cover */
+.notion-collection-card__cover {
+  display: block; /* Ensure the image is visible */
+  flex-shrink: 0; /* Prevent the image from shrinking */
+  width: 150px; /* Fixed width for the image */
+  height: 150px; /* Fixed height for the image */
+  background-size: cover; /* Ensure the image covers the entire area */
+  background-position: center; /* Center the image */
+  border-radius: 8px; /* Optional styling */
+}
+
+/* Adjust card content to take up remaining space */
+.notion-collection-card__content {
+  flex-grow: 1; /* Allow content to fill the remaining space */
+  display: flex; /* Flexbox for vertical alignment */
+  flex-direction: column; /* Stack title and text vertically */
+}
+
+/* Adjust card properties to span full width */
+.notion-collection-card__property {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 4px 0; /* Adjust spacing between properties */
+}
+
+/* Add hover effect to cards */
+.notion-collection-card.gallery:hover {
+  transform: translateY(-4px); /* Slight lift on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Emphasized shadow */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .notion-collection-card.gallery {
+    flex-direction: column; /* Stack image and content vertically */
+    align-items: flex-start; /* Align content to the left */
+  }
+
+  .notion-collection-card__cover {
+    width: 100%; /* Full width for smaller screens */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .notion-collection-card__content {
+    margin-top: 16px; /* Space between image and content */
+  }
+}
