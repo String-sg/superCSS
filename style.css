@@ -90,13 +90,11 @@
 @media (max-width: 768px) {
   .notion-collection-card.gallery {
     flex-direction: row; /* Keep image and text in a horizontal layout */
-    align-items: center; /* Align image and text vertically */
-    gap: 12px; /* Adjust spacing for smaller screens */
+    gap: 6px; /* Adjust spacing for smaller screens */
   }
 
   .notion-collection-card__cover {
-    width: 75px; /* Smaller width for images on mobile */
-    height: 75px; /* Maintain square aspect ratio */
+    width: 115px; /* Smaller width for images on mobile */
   }
 
   .notion-collection-card__content {
@@ -111,6 +109,6 @@
 
   /* Optional: Adjust spacing for smaller screens */
   .notion-collection-card__property {
-    margin: 2px 0; /* Reduce spacing between properties */
+    margin: 1px 0; /* Reduce spacing between properties */
   }
 }
